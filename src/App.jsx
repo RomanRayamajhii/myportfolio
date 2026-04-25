@@ -5,34 +5,37 @@ import Contacts from "./components/Contacts/Contacts.jsx";
 import Project from "./components/Projects/Project.jsx";
 import About from "./components/About/About.jsx";
 import Experience from "./components/Experience/Experience.jsx";
+import ecommerceImg from "./assets/ecommerce.png";
+import foodpreImg from "./assets/foodpre.png";
+import rojgarlanceImg from "./assets/rojgarlance.png";
 
 
 
 const projects = [
   {
     id: 1,
-    image: './assets/ecommerce.png',
+    image: ecommerceImg,
     title: 'E-commerce Platform',
     description: 'A full-stack e-commerce website built with React and Node.js.',
-    tech: "React, Node.js, Express, MongoDB",
+    tech: "Bootstrap,Django",
     demo: '#',
     code: '#',
   },
   {
     id: 2,
-    image: 'https://i.pravatar.cc/300?img=2',
+    image: foodpreImg,
     title: 'Food Delivery App',
     description: 'A mobile responsive food delivery website using React and Firebase.',
-    tech: "React, Firebase, Tailwind",
+    tech: "HTML,JavaScript,CSS,PHP",
     demo: '#',
     code: '#',
   },
     {
     id: 3,
-    image: 'https://i.pravatar.cc/300?img=3',
-    title: 'Social Media Dashboard',
-    description: 'A dashboard for monitoring social media metrics built with React and Chart.js.',
-    tech: "React, Chart.js, Tailwind",
+    image: rojgarlanceImg,
+    title: 'Rojgarlance',
+    description: 'A Freelance Website',
+    tech: "Next.js,Django, Tailwind css",
     demo: '#',
     code: '#',
   },

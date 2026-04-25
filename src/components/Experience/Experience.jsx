@@ -14,23 +14,24 @@ const Experience = () => {
       </h4>
       <p className="text-sm text-gray-500 mb-3">2024 - Present</p>
       <ul className="list-disc list-inside text-gray-600 space-y-1">
-        <li>Built E-commerce, Food Delivery, and Ticket Booking systems</li>
-        <li>Used React, Node.js, Express, MongoDB, MySQL</li>
+        <li>Built E-commerce, Food Delivery, and Freelancing websites</li>
+        <li>Used HTML, CSS, Js, Bootstrap, PHP, Next.js, MySQL</li>
         <li>Designed UI with Tailwind CSS</li>
-        <li>Developed REST APIs and backend logic</li>
+
+      </ul>
+    </div>
+    {/* Learning  */}
+    <div className="bg-white p-6 rounded-xl shadow-md">
+      <h4 className="text-lg font-bold text-gray-700">
+        Ongoing Learning
+      </h4>
+      <ul className="list-disc list-inside text-gray-600 space-y-1">
+        <li>Currently learning Next.js framework</li>
+        <li>Node.js and Express.js for backend development</li>
       </ul>
     </div>
 
-    {/* Internship */}
-    <div className="bg-white p-6 rounded-xl shadow-md">
-      <h4 className="text-lg font-bold text-gray-700">
-        Internship Seeking
-      </h4>
-      <ul className="list-disc list-inside text-gray-600 space-y-1">
-        <li>Actively seeking internship opportunities in Web Development</li>
-        <li>Interested in React, Node.js, and Django</li>
-      </ul>
-    </div>
+   
 
     {/* Django */}
     <div className="bg-white p-6 rounded-xl shadow-md">
