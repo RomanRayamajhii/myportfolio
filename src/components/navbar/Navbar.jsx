@@ -7,7 +7,8 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full flex justify-between items-center bg-gray-800 text-white px-6 md:px-20 py-4 z-50">
       {/* Logo */} 
-      <span className=" font-bold  text-xl tracking-wide"> Roman Rayamajhi | Portfolio </span>
+      <span className=" font-bold  text-xl tracking-wide">
+        <a href="/" className="hover:text-gray-300 transition-all"> Roman Rayamajhi | Portfolio </a> </span>
 
       {/* Menu */}
 <ul
