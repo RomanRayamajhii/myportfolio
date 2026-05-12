@@ -1,21 +1,52 @@
-const Project = (props) => {
+import { motion as Motion } from "framer-motion";
+import { Code2, ExternalLink } from "lucide-react";
+
+const Project = ({ image, title, description, tech, demo, code, index }) => {
   return (
-    <div id="projects" className='w-full md:w-72 lg:w-80  bg-white rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300
-     '>
-      <img src={props.image} alt={props.title} className='w-full h-48 object-cover'/>
-      <div className='p-6'>
-        <h3 className='text-xl font-bold mb-2 text-gray-700'>{props.title}</h3>
-        <p className='text-gray-500 mb-4'>{props.description}</p>
-        <div className='flex gap-2 mb-4'>
-          <p className="font-semibold text-gray-700 text-md">Tech:</p>
-          <p className='text-gray-500'>{props.tech}</p>
+    <Motion.article
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 0.5, delay: index * 0.08 }}
+      whileHover={{ y: -8 }}
+      className="glass-panel group overflow-hidden rounded-2xl"
+    >
+      <div className="relative overflow-hidden">
+        <img
+          src={image}
+          alt={title}
+          className="h-56 w-full object-cover transition duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold text-white">{title}</h3>
+        <p className="mt-3 min-h-16 text-sm leading-6 text-slate-300">{description}</p>
+        <div className="mt-5 flex flex-wrap gap-2">
+          {tech.split(",").map((item) => (
+            <span key={item} className="rounded-full border border-teal-300/20 bg-teal-300/10 px-3 py-1 text-xs font-semibold text-teal-100">
+              {item.trim()}
+            </span>
+          ))}
         </div>
-        <div className='flex items-center justify-center gap-4'>
-          <a href={props.demo} className='bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition-all'>Demo</a>
-          <a href={props.code} className='bg-emerald-700 text-white px-4 py-2 rounded-full hover:bg-green-600 transition-all'>Code</a>
+        <div className="mt-6 flex gap-3">
+          <a
+            href={demo}
+            className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-white px-4 py-2 text-sm font-bold text-slate-950 transition hover:bg-teal-100"
+          >
+            <ExternalLink size={16} />
+            Demo
+          </a>
+          <a
+            href={code}
+            className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-white/15 px-4 py-2 text-sm font-bold text-white transition hover:bg-white/10"
+          >
+            <Code2 size={16} />
+            Code
+          </a>
         </div>
       </div>
-    </div>
+    </Motion.article>
   );
 };
 

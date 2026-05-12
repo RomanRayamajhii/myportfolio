@@ -1,69 +1,72 @@
-import React from 'react'
+import { motion as Motion } from "framer-motion";
+
+const skills = ["React.js", "Next.js", "Node.js", "Express.js", "MongoDB", "RESTful APIs", "Git & GitHub"];
+
+const highlights = [
+  {
+    title: "Education",
+    copy: "Bachelor of Computer Application at Tribhuvan University, Nepal. Ongoing.",
+  },
+  {
+    title: "Currently Learning",
+    copy: "Deepening Next.js, Tailwind CSS, Node.js, Express, and modern backend patterns.",
+  },
+  {
+    title: "Interests",
+    copy: "Web development, open-source contribution, AI, machine learning, hiking, photography, and travel.",
+  },
+];
 
 const About = () => {
   return (
- 
-        <div className="min-h-screen scroll-mt-24 px-6 md:px-12 py-10 md:py-20  bg-gray-100 " id="about" >
-            <h2 className="text-4xl font-bold text-center mb-12">About Me</h2>
-            <div className='max-w-5xl mx-auto flex flex-col gap-12'>
-                
-                <div className='text-center md:text-left'>
-            <p className="text-gray-600 text-lg leading-relaxed">
-        I'm Roman Rayamajhi, a passionate Full Stack Developer with experience in building dynamic and responsive web applications using React, Node.js, Django, and PHP. 
-        I enjoy creating user-friendly interfaces and developing efficient backend systems that solve real-world problems.
-        I have worked on projects such as e-commerce platforms, ticket booking systems, and food delivery applications, which helped me strengthen my skills in both frontend and backend development.
-        I'm always eager to learn new technologies, improve my skills, and collaborate on innovative projects that create real impact.
-      </p>
-      </div>
-        
-            <div className=' gap-10 max-w-5xl mx-auto '>
-                {/* skills */}
-                <div>
-                <h3 className="text-gray-800 mb-6 text-2xl font-semibold" >Skills</h3>
-                <ul className="list-disc list-inside text-gray-600 space-y-1">
-                    <li >React.js</li>
-                    <li>Next.js</li>
-                    <li>Node.js</li>
-                    <li>Express.js</li>
-                    <li>MongoDB</li>
-                    <li>RESTful APIs</li>
-                    <li>Git & GitHub</li>
-                </ul>
+    <section className="scroll-mt-24 py-20 md:py-28" id="about">
+      <div className="section-shell grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <Motion.div
+          initial={{ opacity: 0, x: -24 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="text-sm font-bold uppercase tracking-[0.28em] text-teal-200">About me</p>
+          <h2 className="section-title mt-3 text-4xl md:text-6xl">Curious builder, practical developer.</h2>
+        </Motion.div>
+
+        <Motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.55 }}
+          className="glass-panel rounded-2xl p-6 md:p-8"
+        >
+          <p className="text-lg leading-8 text-slate-300">
+            I am Roman Rayamajhi, a full stack developer who enjoys building dynamic, responsive web applications with
+            React, Node.js, Django, and PHP. I like turning real problems into simple interfaces and dependable backend
+            systems.
+          </p>
+
+          <div className="mt-8">
+            <h3 className="text-xl font-bold text-white">Core Skills</h3>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {skills.map((skill) => (
+                <span key={skill} className="rounded-full bg-white/10 px-3 py-2 text-sm font-semibold text-slate-100">
+                  {skill}
+                </span>
+              ))}
             </div>
-                <div  >
-                    {/* Edu */}
-                    <h3 className="text-gray-800 mb-6 text-2xl font-semibold mt-6" >Education</h3>
-                    <p className="text-gray-600 mb-6">
-                        Bachelor of Computer Application <br />
-                        Tribhuvan University, Nepal <br />
-                        on-going
-                    
-                    </p>
-                </div>
-                <div >
-                    {/* Learning */}
-                    <h3 className="text-gray-800 mb-6 text-2xl font-semibold">Learning</h3>
-                    <h3 className="text-gray-600 mb-6">
-                        I'm currently learning Next.js, Tailwind CSS, and exploring more about backend development with Node.js and Express.
-                    </h3>
+          </div>
 
-                </div>
-                <div >
-                    {/* Interests */}
-                    <h3 className="text-gray-800 mb-6 text-2xl font-semibold">Interests</h3>
-                   <p className="text-gray-600 mb-6">
-  I'm interested in web development, open-source contribution, and exploring new technologies. 
-  I also have a growing interest in Artificial Intelligence and Machine Learning, and I plan to build intelligent and data-driven applications in the future. 
-  In my free time, I enjoy hiking, photography, and traveling.
-</p>
-                </div>
-                </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {highlights.map((item) => (
+              <div key={item.title} className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                <h3 className="font-bold text-teal-100">{item.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-300">{item.copy}</p>
+              </div>
+            ))}
+          </div>
+        </Motion.div>
+      </div>
+    </section>
+  );
+};
 
-        </div>
-        </div>
-      
-   
-  )
-}
-
-export default About
+export default About;
