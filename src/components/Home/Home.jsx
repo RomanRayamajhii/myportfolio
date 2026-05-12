@@ -11,6 +11,8 @@ const roles = [
   "AI & Python Learner"
 ];
 
+const loopingRoles = [...roles, roles[0]];
+
 const Home = () => {
   return (
     <section
@@ -36,6 +38,16 @@ const Home = () => {
         </h1>
 
         <div className="mt-6 h-8 overflow-hidden text-lg font-semibold text-teal-200">
+          {/* <Motion.div
+            animate={{ y: ["0%", "-25%", "-50%", "-75%","-120%" ]}}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          >
+            {loopingRoles.map((role, index) => (
+              <p key={`${role}-${index}`} className="h-8">
+                {role}
+              </p>
+            ))}
+          </Motion.div> */}
           <Motion.div
             animate={{ y: ["0%", "-25%", "-50%", "-75%", "0%"] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
@@ -45,7 +57,7 @@ const Home = () => {
                 {role}
               </p>
             ))}
-          </Motion.div>
+          </Motion.div> 
         </div>
 
         <p className="mt-5 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
@@ -109,7 +121,7 @@ const Home = () => {
           <img
             src={image}
             alt="Roman Rayamajhi"
-            className="h-72 w-72 rounded-3xl object-cover md:h-96 md:w-96"
+            className="aspect-square w-72 max-w-full rounded-3xl object-cover md:w-96"
           />
         </div>
       </Motion.div>
