@@ -101,4 +101,113 @@ const Contacts = () => {
     }
   };
 
-  return ( <section id="contact" className="scroll-mt-24 py-20 md:py-28"> <div className="section-shell grid gap-8 lg:grid-cols-[0.8fr_1.2fr]"> <Motion.div initial={{ opacity: 0, x: -22 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.5 }} > <p className="text-sm font-bold uppercase tracking-[0.28em] text-teal-200">Contact</p> <h2 className="section-title mt-3 text-4xl md:text-6xl">Let us build something useful.</h2> <p className="mt-5 text-lg leading-8 text-slate-300"> Have a project idea, collaboration, or role in mind? Send a message and I will get back to you. </p> <div className="mt-8 flex gap-3"> <a href="mailto:romanraya4@gmail.com" className="grid h-12 w-12 place-items-center rounded-xl border border-white/10 bg-white/5 text-slate-200 transition hover:bg-white/10 hover:text-teal-200" aria-label="Email" > <Mail size={20} /> </a> <a href="https://www.linkedin.com/in/romanrayamajhi/" target="_blank" rel="noreferrer" className="grid h-12 w-12 place-items-center rounded-xl border border-white/10 bg-white/5 text-slate-200 transition hover:bg-white/10 hover:text-teal-200" aria-label="LinkedIn" > <img src={LinkedinIcon} alt="" className="h-5 w-5" /> </a> <a href="https://github.com/RomanRayamajhii" target="_blank" rel="noreferrer" className="grid h-12 w-12 place-items-center rounded-xl border border-white/10 bg-white/5 text-slate-200 transition hover:bg-white/10 hover:text-teal-200" aria-label="GitHub" > <img src={GithubIcon} alt="" className="h-5 w-5" /> </a> </div> </Motion.div> <Motion.form onSubmit={handleSubmit} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.55 }} className="glass-panel rounded-2xl p-6 md:p-8" > <div className="grid gap-4 md:grid-cols-2"> <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Your Name" required className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 outline-none transition placeholder:text-slate-500 focus:border-teal-300" /> <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Your Email" required className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 outline-none transition placeholder:text-slate-500 focus:border-teal-300" /> </div> <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Your Message" required className="mt-4 h-36 w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 outline-none transition placeholder:text-slate-500 focus:border-teal-300" /> {status.message ? ( <p className={mt-4 rounded-xl border px-4 py-3 text-sm ${ status.type === "success" ? "border-teal-300/30 bg-teal-300/10 text-teal-100" : "border-rose-300/30 bg-rose-300/10 text-rose-100" }} role="status" > {status.message} </p> ) : null} <button type="submit" disabled={isSending} className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-teal-300 px-6 py-3 font-bold text-slate-950 shadow-lg shadow-teal-500/20 transition hover:bg-teal-200 disabled:cursor-not-allowed disabled:bg-slate-500 disabled:text-slate-200 disabled:shadow-none" > {isSending ? "Sending..." : "Send Message"} <Send size={18} /> </button> </Motion.form> </div> </section> ); }; export default Contacts;
+  return (
+    <section id="contact" className="scroll-mt-24 py-20 md:py-28">
+      <div className="section-shell grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+        <Motion.div
+          initial={{ opacity: 0, x: -22 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="text-sm font-bold uppercase tracking-[0.28em] text-teal-200">Contact</p>
+          <h2 className="section-title mt-3 text-4xl md:text-6xl">Let us build something useful.</h2>
+          <p className="mt-5 text-lg leading-8 text-slate-300">
+            Have a project idea, collaboration, or role in mind? Send a message and I will get back to you.
+          </p>
+
+          <div className="mt-8 flex gap-3">
+            <a
+              href="mailto:romanraya4@gmail.com"
+              className="grid h-12 w-12 place-items-center rounded-xl border border-white/10 bg-white/5 text-slate-200 transition hover:bg-white/10 hover:text-teal-200"
+              aria-label="Email"
+            >
+              <Mail size={20} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/romanrayamajhi/"
+              target="_blank"
+              rel="noreferrer"
+              className="grid h-12 w-12 place-items-center rounded-xl border border-white/10 bg-white/5 text-slate-200 transition hover:bg-white/10 hover:text-teal-200"
+              aria-label="LinkedIn"
+            >
+              <img src={LinkedinIcon} alt="" className="h-5 w-5" />
+            </a>
+            <a
+              href="https://github.com/RomanRayamajhii"
+              target="_blank"
+              rel="noreferrer"
+              className="grid h-12 w-12 place-items-center rounded-xl border border-white/10 bg-white/5 text-slate-200 transition hover:bg-white/10 hover:text-teal-200"
+              aria-label="GitHub"
+            >
+              <img src={GithubIcon} alt="" className="h-5 w-5" />
+            </a>
+          </div>
+        </Motion.div>
+
+        <Motion.form
+          onSubmit={handleSubmit}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.55 }}
+          className="glass-panel rounded-2xl p-6 md:p-8"
+        >
+          <div className="grid gap-4 md:grid-cols-2">
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Your Name"
+              required
+              className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-teal-300"
+            />
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Your Email"
+              required
+              className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-teal-300"
+            />
+          </div>
+
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Your Message"
+            required
+            className="mt-4 h-36 w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-teal-300"
+          />
+
+          {status.message ? (
+            <p
+              className={`mt-4 rounded-xl border px-4 py-3 text-sm ${
+                status.type === "success"
+                  ? "border-teal-300/30 bg-teal-300/10 text-teal-100"
+                  : "border-rose-300/30 bg-rose-300/10 text-rose-100"
+              }`}
+              role="status"
+            >
+              {status.message}
+            </p>
+          ) : null}
+
+          <button
+            type="submit"
+            disabled={isSending}
+            className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-teal-300 px-6 py-3 font-bold text-slate-950 shadow-lg shadow-teal-500/20 transition hover:bg-teal-200 disabled:cursor-not-allowed disabled:bg-slate-500 disabled:text-slate-200 disabled:shadow-none"
+          >
+            {isSending ? "Sending..." : "Send Message"}
+            <Send size={18} />
+          </button>
+        </Motion.form>
+      </div>
+    </section>
+  );
+};
+
+export default Contacts;
